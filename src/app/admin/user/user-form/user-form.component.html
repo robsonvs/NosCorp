@@ -1,0 +1,50 @@
+<h1>User Form</h1> <hr/>
+
+<form #f="ngForm">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="user.email"
+          email="true"
+          #email="ngModel"
+          required
+          autofocus="true"
+          class="form-control"/>
+    <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Email is required!
+      </div>
+      <div *ngIf="email.errors.email">
+        Email is invalid!
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name"
+          name="name"
+          type="name"
+          [(ngModel)]="user.displayName"
+          #name="ngModel"
+          required
+          maxlength="30"
+          minlength="3"
+          class="form-control"/>
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required!
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name cannot be less them 3 {{ name.errors.minlength.requierdLength }} caracteres!
+      </div>
+    </div>
+
+  </div>
+
+  <button [disabled]="f.invalid"
+            (click)="save()"
+            class="btn btn-info">Save</button>
+</form>
