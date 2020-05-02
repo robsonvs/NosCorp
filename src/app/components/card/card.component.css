@@ -1,0 +1,33 @@
+.card {
+  margin-bottom: 30px;
+}
+
+.card-img-top {
+  height: 200px;
+}
+
+.card-footer {
+  padding: 0;
+  background: #fff;
+  border-top: none;
+}
+
+.card-footer button {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}

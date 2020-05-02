@@ -9,19 +9,26 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
+import { UserService } from './admin/user/user.service';
+import { ComponentService } from './components/component.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/home/home.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { CarouselComponent } from './core/carousel/carousel.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { AboutMeComponent } from './shared/about-me/about-me.component';
+import { ContactMeComponent } from './shared/contact-me/contact-me.component';
+import { PortfolioComponent } from './shared/portfolio/portfolio.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { UserFormComponent } from './admin/user/user-form/user-form.component';
 import { UserListComponent } from './admin/user/user-list/user-list.component';
 import { UserDetailsComponent } from './admin/user/user-details/user-details.component';
+import { FormComponent } from './admin/form/form.component';
+import { ListComponent } from './admin/list/list.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { MediaComponent } from './components/media/media.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,11 @@ import { UserDetailsComponent } from './admin/user/user-details/user-details.com
     PageNotFoundComponent,
     UserFormComponent,
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    FormComponent,
+    ListComponent,
+    MediaComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +59,10 @@ import { UserDetailsComponent } from './admin/user/user-details/user-details.com
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    ComponentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

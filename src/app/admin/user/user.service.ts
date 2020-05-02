@@ -10,7 +10,7 @@ import { User } from './../../model/user';
 export class UserService {
 
   private URL = '/users';
-  dbUser: AngularFirestoreCollection<User> = null;
+  private dbUser: AngularFirestoreCollection<User> = null;
 
   constructor(db: AngularFirestore) {
     this.dbUser = db.collection(this.URL);

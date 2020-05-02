@@ -1,0 +1,76 @@
+<hr/> <h1>Form Component</h1> <hr/>
+
+<div class="container">
+  <form #f="ngForm">
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category"
+            name="category"
+            required
+            [(ngModel)]="visualcomponent.category"
+            #category="ngModel"
+            autofocus
+            class="form-control">
+        <option value=""></option>
+        <option *ngFor="let c of categories | async" [value]="c.id">
+          {{ c.name }}
+        </option>
+      </select>
+      <div *ngIf="category.touched && category.invalid"
+          class="alert alert-danger">
+        Category is required!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title"
+            name="titel"
+            type="text"
+            [(ngModel)]="visualcomponent.title"
+            class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea id="content"
+            name="content"
+            [(ngModel)]="visualcomponent.content"
+            class="form-control" >
+      </textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input id="image"
+            name="image"
+            type="text"
+            [(ngModel)]="visualcomponent.image"
+            class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input id="link"
+            name="link"
+            type="text"
+            [(ngModel)]="visualcomponent.link"
+            class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="button">Button</label>
+      <input id="button"
+            name="button"
+            type="text"
+            [(ngModel)]="visualcomponent.button"
+            class="form-control" />
+    </div>
+
+    {{ f.value.json }}
+    <button [disabled]="f.invalid"
+          (click)="save()"
+          class="btn btn-secondary">Save</button>
+  </form>
+</div>

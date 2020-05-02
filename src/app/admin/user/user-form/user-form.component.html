@@ -1,4 +1,4 @@
-<h1>User Form</h1> <hr/>
+<hr/> <h1>User Form</h1> <hr/>
 
 <form #f="ngForm">
   <div class="form-group">
@@ -26,7 +26,7 @@
     <label for="name">Name</label>
     <input id="name"
           name="name"
-          type="name"
+          type="text"
           [(ngModel)]="user.displayName"
           #name="ngModel"
           required

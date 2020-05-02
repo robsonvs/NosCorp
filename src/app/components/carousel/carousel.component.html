@@ -1,0 +1,46 @@
+<div class="container">
+  <div id="myCarousel"
+      class="carousel slide carousel-fade"
+      data-ride="carousel">
+
+      <ol class="carousel-indicators">
+        <li *ngFor="let c of components; let i = index"
+            data-target="#myCarousel"
+            data-slide-to="i"
+            [class]="(i === 0) ? 'active' : '' ">
+        </li>
+      </ol>
+
+    <div class="carousel-inner">
+      <div *ngFor="let c of components; let i = index"
+            class="carousel-item {{ i == 0 ? 'active' : '' }}">
+            <!-- [class]="'carousel-item' (i === 0) ? 'active' : '' "> -->
+        <img [src]="c.image" [alt]="c.title">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>{{ c.title }}</h1>
+            <p>{{ c.content }}</p>
+            <p>
+              <a class="btn btn-lg btn-primary "
+                [href]="c.link"
+                role="button">
+                {{ c.button }}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="carousel-control-prev"
+        href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>

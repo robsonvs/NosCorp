@@ -1,0 +1,34 @@
+<div class="container">
+  <hr class="featurette-divider">
+
+  <div *ngFor="let c of components; let i = index">
+    test 2
+        <div class="row featurette overflow-auto">
+          <!-- <div [class]="'col-md-7 ' (i === 0) ? 'order-md-1' : '' "> -->
+          <div class="col-md-7 {{ (i + 1) % 2 == 0 ? 'order-md-1' : '' }}">
+            <h2 class="featurette-heading">
+              {{ i }} -
+              <span class="text-muted">
+                {{ c.title }}
+              </span>
+            </h2>
+            <p class="lead">
+              {{ c.content }}
+            </p>
+          </div>
+
+          <div class="col-md-5">
+            <figure class="figure">
+              <img [src]="c.image" class="figure-img img-fluid rounded"
+                [alt]="c.title">
+              <figcaption class="figure-caption {{ (i + 1) % 2 == 0 ? 'text-right' : 'text-left' }}">
+                <a [href]="c.link">{{ c.button }}</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+      </div>
+</div>

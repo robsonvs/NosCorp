@@ -144,6 +144,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "noscorp"
+    }
+  },
+  "defaultProject": "noscorp",
+  "cli": {
+    "analytics": "10d00df6-e6aa-4c5f-b106-0d2def0a6de1"
+  }
 }

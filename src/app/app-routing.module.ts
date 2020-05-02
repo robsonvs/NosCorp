@@ -1,12 +1,14 @@
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
-import { AboutMeComponent } from './about-me/about-me.component';
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './core/home/home.component';
-
+import { ContactMeComponent } from './shared/contact-me/contact-me.component';
+import { PortfolioComponent } from './shared/portfolio/portfolio.component';
+import { AboutMeComponent } from './shared/about-me/about-me.component';
+import { ListComponent } from './admin/list/list.component';
+import { FormComponent } from './admin/form/form.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'customers', pathMatch: 'full' },
@@ -14,6 +16,11 @@ const routes: Routes = [
   { path: 'about-me', component: AboutMeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'contact-me', component: ContactMeComponent },
+
+  { path: 'components-form/:id', component: FormComponent },
+  { path: 'components-form', component: FormComponent },
+  { path: 'components-list', component: ListComponent },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 

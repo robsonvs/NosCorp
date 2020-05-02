@@ -46,6 +46,29 @@
           </a>
         </li>
 
+        <li class="nav-item dropdown">
+          <a id="dropdown01"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              class="nav-link dropdown-toggle">
+            Settings
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item"
+                routerLink="/components-form"
+                routerLinkActive="active">Form</a>
+
+            <ng-container>
+              <a class="dropdown-item"
+                      routerLink="/components-list"
+                      routerLinkActive="active">List</a>
+            </ng-container>
+
+          </div>
+        </li>
+
       </ul>
 
       <!-- <form class="form-inline mt-2 mt-md-0">
